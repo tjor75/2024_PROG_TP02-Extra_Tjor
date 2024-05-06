@@ -54,6 +54,13 @@ double ObtenerRealEntre(string mensaje, double min, double max)
         ingreso = ObtenerReal("Error: ingrese un real entre " + min + " y " + max + ".\n" + mensaje);
     return ingreso;
 }
+double ObtenerRealDesde(string mensaje, double min)
+{
+    double ingreso = ObtenerReal(mensaje);
+    while (ingreso < min)
+        ingreso = ObtenerReal("Error: ingrese un real mayor o igual a " + min + ".\n" + mensaje);
+    return ingreso;
+}
 
 Superheroe ObtenerSuperheroe(double fuerzaMin, double fuerzaMax, double velocidadMin, double velocidadMax)
 {
@@ -66,8 +73,7 @@ Superheroe ObtenerSuperheroe(double fuerzaMin, double fuerzaMax, double velocida
     fuerza = ObtenerRealEntre("Obtener fuerza (N): ", fuerzaMin, fuerzaMax);
     nombre = ObtenerCadena("Obtener nombre: ");
     ciudad = ObtenerCadena("Obtener ciudad: ");
-    // Suposición: al ser un superhéroe, su peso puede ser nulo o negativo.
-    peso = ObtenerReal("Obtener peso (kg): ");
+    peso = ObtenerRealDesde("Obtener peso (kg): ", 0);
     velocidad = ObtenerRealEntre("Obtener velocidad (km/h): ", velocidadMin, velocidadMax);
 
     return new Superheroe(nombre, ciudad, peso, fuerza, velocidad);
