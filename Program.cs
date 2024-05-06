@@ -14,8 +14,8 @@ int opcion;
 double skill1;
 double skill2;
 double moduloDiferenciaPuntos;
-Superheroe superheroe1 = null;
-Superheroe superheroe2 = null;
+Superheroe? superheroe1 = null;
+Superheroe? superheroe2 = null;
 Superheroe ganador;
 
 
